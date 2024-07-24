@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#div-header {
+    text-align: center;
+}
+
+#produto{
+    width: 100px;
+    position: relative;
+    animation: moveLeft 0.8s;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(153, 153, 244);
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 50px;
+}
+
+#produto img{
+    width: 100%;
+    max-width: 190px;
+}
+
+#produto span{
+    width: 100%;
+}
+
+#produto h1{
+    width: 100%;
+}
+
+#img{
+    width: 50%;
+    height: 50%;
+}
+
+.produto-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+#produto h1{
+    margin-bottom: 10px;
+}
+
+#descricaoSpan{
+    width: 100%;
+    padding: 5px;
+    color: white;
+}
+#barraLateral{
+    width: 15%;
+    background-color: rgb(153, 153, 244);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+#barraLateral a{
+    text-decoration: none;
+    color: white;
+}
+
+#buy{
+    color: white;
+    background-color: rgb(1, 100, 100);
+    border: none;
+    border-radius: 10px;
+    padding: 10px ;
+    width: 100%;
+}
+#buy:hover{
+    background-color: rgb(10, 151, 151);
+}
+
+#nav-div{
+    background-color: rgb(153, 153, 244);
+    padding: 10px;
+}
+#nav-div nav a{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(153, 153, 244);
+    
+}
+
+#button {
+    color: white;
+    background-color: rgb(1, 100, 100);
+    border: none;
+    border-radius: 10px;
+    padding: 10px ;
+}
+#button:hover{
+    background-color: rgb(10, 151, 151);
+}
+
+#antes, #depois{
+    color: black;
+    background-color: gray;
+    border: none;
+    border-radius: 10px;
+    padding: 10px ;
+    width: 10%;
+    position: relative;
+    animation: moveLeft 0.8s;
+}
+
+
+#antes:hover{
+    background-color: rgb(138, 138, 138);
+    
+}
+
+#depois:hover{
+    background-color: rgb(138, 138, 138);
+}
+
+#prox:hover{
+    background-color: rgb(118, 113, 113);
+    cursor: pointer;
+}
+
+#div-proximo{
+    text-align: center;
+}
+
+
+@keyframes moveLeft {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+#valor {
+    font-size: 30px;
+}
+
+#pix{
+    font-size: 20px;
+    color: green;
+}

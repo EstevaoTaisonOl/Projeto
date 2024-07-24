@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#div-header {
+    text-align: center;
+}
+
+
+#barraLateral{
+    width: 15%;
+    background-color: rgb(153, 153, 244);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+#barraLateral a{
+    text-decoration: none;
+    color: white;
+}
+
+
+#nav-div{
+    background-color: rgb(153, 153, 244);
+    padding: 10px;
+}
+#nav-div nav a{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(153, 153, 244);
+    
+}
+
+#button {
+    color: white;
+    background-color: rgb(1, 100, 100);
+    border: none;
+    border-radius: 10px;
+    padding: 10px ;
+}
+#button:hover{
+    background-color: rgb(10, 151, 151);
+}
+
+#div-marcas {
+    display: flex;
+    justify-content: center;
+}
+
+#div-marca{
+    background-color: rgb(153, 153, 244);
+    width: 20%;
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 10px; /* Espaçamento entre os elementos */
+}
+
+#marca1, #marca2 {
+    text-decoration: none;
+    color: white;
+}
