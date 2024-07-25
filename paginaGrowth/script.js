@@ -13,14 +13,14 @@ var pix = undefined
 if(marca == "Growth"){
     produtos = ["creatina", "whey", "bcaa"];
     produtosDesc = ["Esse produto melhora sua performace na academia", "Quanto mais Proteina melhor", "Quanto mais melhor"];
-    imgs = ["./creatinaGrowth.png", "./wheyGrowth.png", "../MaisVendidosgr-main/maisVendidos/BCAA.png"];
+    imgs = ["../imgs/creatinaGrowth.png", "../imgs/wheyGrowth.png", "../imgs/BCAA.png"];
     valor = [100, 120, 100]
     pix = [89,110, 90]
     imgProduto.src = imgs[0]
 }else if(marca == "Max"){
     produtos = ["creatina", "whey", "bcaa"];
     produtosDesc = ["Esse produto melhora sua performace na academia", "Quanto mais Proteina melhor", "quanto mais melhor"];
-    imgs = ["./creatinaMax.png", "./wheyMax.png" , "./bcaaMax.png"];
+    imgs = ["../imgs/creatinaMax.png", "../imgs/wheyMax.png" , "../imgs/bcaaMax.png"];
     valor = [100, 120, 100]
     pix = [89,110, 90]
     imgProduto.src = imgs[0]
@@ -69,37 +69,83 @@ function atualizarProduto(index) {
     divInfo.appendChild(span);
 
     var button = document.createElement("button");
-    button.innerHTML = "Comprar";
+    button.innerHTML = "Adicionar ao carrinho";
     button.style.textTransform = "Capitalize";
     button.id = "button";
     divInfo.appendChild(button);
 
 
     button.addEventListener("click", () => {
-        console.log(produtos[index])
-        if(localStorage.getItem(produtos[index] + marca)){
-            var item = localStorage.getItem(produtos[index] + marca)
+        var produtoNome = [];
+        var produtoQuantidade = [];
+        var produtoMarca = [];
+        var imgComprado = [];
+        var valorComprado = [];
+        var produto = produtos[index];
 
-            var fake = Number(item) + 1
-            localStorage.setItem(produtos[index] + marca, fake)
+        if (localStorage.getItem("ProdutosComprados")) {
+            var nomeP = localStorage.getItem("ProdutosComprados");
+            var quantidadeP = localStorage.getItem("Quantidade");
+            var marcaP = localStorage.getItem("MarcaComprado");
+            var imgP = localStorage.getItem("ImgComprado");
+            var vlrC = localStorage.getItem("valorComprado");
+    
+            var arrN = nomeP.split(",");
+            var arrQ = quantidadeP.split(",");
+            var arrM = marcaP.split(",");
+            var arrP = imgP.split(",");
+            var arrC = vlrC.split(",");
+    
+            var produtoExistente = false;
+    
+            for (var i = 0; i < arrN.length; i++) {
+                if (arrN[i] == produto && arrM[i] == marca) {
+                    arrQ[i] = Number(arrQ[i]) + 1;
+                    produtoExistente = true;
+                    break;
+                }
+            }
+    
+            if (!produtoExistente) {
+                arrN.push(produto);
+                arrQ.push(1);
+                arrM.push(marca);
+                arrP.push(imgs[index]);
+                arrC.push(valor[index]);
+            }
+    
+            localStorage.setItem("ProdutosComprados", arrN.join(","));
+            localStorage.setItem("Quantidade", arrQ.join(","));
+            localStorage.setItem("MarcaComprado", arrM.join(","));
+            localStorage.setItem("ImgComprado", arrP.join(","));
+            localStorage.setItem("valorComprado", arrC.join(","));
+        } else {
 
-        }else{
-            localStorage.setItem(produtos[index] + marca, 1)
+            produtoNome.push(produto);
+            produtoQuantidade.push(1);
+            produtoMarca.push(marca);
+            imgComprado.push(imgs[index]);
+            valorComprado.push(valor[index])
+            localStorage.setItem("ProdutosComprados", produtoNome.join(","));
+            localStorage.setItem("Quantidade", produtoQuantidade.join(","));
+            localStorage.setItem("MarcaComprado", produtoMarca.join(","));
+            localStorage.setItem("ImgComprado", imgComprado.join(","));
+            localStorage.setItem("valorComprado", valorComprado.join(","));
         }
-    })
+    });
+    
 
     var span = document.createElement("span")
     span.innerHTML = "Valor: " + valor[index]
     span.id = "valor"
     divInfo.appendChild(span)
 
-    var span = document.createElement("span")
-    span.innerHTML = "No Pix: " + pix[index]
-    span.id = "pix"
-    divInfo.appendChild(span)
 
     var div2 = document.createElement("div");
     div2.id = "div-proximo";
+
+    var br = document.createElement("br")
+    div2.appendChild(br)
 
     var antess = document.createElement("button");
     antess.id = "antes";
@@ -126,6 +172,12 @@ function atualizarProduto(index) {
         atualizarProduto(ii);
     });
 }
+
+atualizarProduto(0)
 document.querySelector(".home").addEventListener("click", () => {
     window.location.href = "../index.html"
+})
+
+carrinho.addEventListener("click", () => {
+    window.location.href = "../carrinho/index.html"
 })

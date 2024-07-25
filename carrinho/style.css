@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f6f6;
+    font-family: "Lato", sans-serif;
+}
+#headerCarrinho {
+    background-color: #111;
+    color: #f6f6f6;
+}
+
+#headerCarrinho h1{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#headerCarrinho span {
+    background-color: #111;
+    color: #f6f6f6;
+    padding: 10px 20px;
+    position: absolute;
+    margin-left: 0.1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    font-size: 130%;
+}
+
+#headerCarrinho span:hover {
+    cursor: pointer;
+}
+
+main {
+    background-color: #fff;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+#subTitle {
+    font-size: 40px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#content {
+    display: flex;
+    justify-content: space-between;
+}
+
+section {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+tbody td {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody td img {
+    max-width: 100px;
+    display: block;
+}
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-container button {
+    background-color: #111;
+    color: #f6f6f6;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.quantity-container button:hover {
+    background-color: #333;
+}
+
+.quantity-container span {
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.resumo-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.resumo-table th {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.resumo-table td {
+    padding: 10px 0;
+}
+
+#resumoCompraHeader {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+#subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+#cupomDeDesconto{
+    > td{
+        color: rgb(0, 255, 0);
+    }
+}
+
+#finalizarCompra{
+    width: 100%;
+    padding: 10px;
+    background-color: green;
+    border: none;
+    border-radius: 18px;
+    color: white;
+}
+
+#finalizarCompra:hover{
+    background-color: rgb(0, 189, 0);
+}

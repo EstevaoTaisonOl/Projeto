@@ -22,9 +22,13 @@
 
 
 #nav-div{
-    background-color: rgb(153, 153, 244);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
     padding: 10px;
 }
+
 #nav-div nav a{
     text-decoration: none;
     color: white;
@@ -34,13 +38,13 @@
 
 #button {
     color: white;
-    background-color: rgb(1, 100, 100);
+    background-color: gray;
     border: none;
     border-radius: 10px;
     padding: 10px ;
 }
 #button:hover{
-    background-color: rgb(10, 151, 151);
+    background-color: rgb(199, 199, 199);
 }
 
 #div-marcas {
@@ -49,7 +53,7 @@
 }
 
 #div-marca{
-    background-color: rgb(153, 153, 244);
+    background-color: #111;
     width: 20%;
     text-align: center;
     border-radius: 20px;
@@ -59,4 +63,9 @@
 #marca1, #marca2 {
     text-decoration: none;
     color: white;
+}
+
+
+#carrinho:hover{
+    cursor: pointer;
 }

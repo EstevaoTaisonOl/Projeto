@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="cabecario">
+        <header id="headerCarrinho">
+            <span id="voltar">voltar</span>
+            <h1>Carrinho de Usuario</h1>
+        </header>
+    </div>
+    <main>
+        <div id="subTitle">Seu carrinho</div>
+        <div id="content">
+            <section>
+                <table id="tableItens">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+                            <th>-</th>
+                        </tr>
+                    </thead>
+                </table>
+            </section>
+            <aside>
+                <table class="resumo-table">
+                    <thead>
+                        <tr>
+                            <th id="resumoCompraHeader">Resumo da compra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="subtotal">
+                            <td>Sub-total</td>
+                            <td id="valorSub">R$</td>
+                        </tr>
+                        <tr id="subtotal">
+                            <td>Frete</td>
+                            <td id="frete">R$ 20</td>
+                        </tr>
+                        <tr id="cupomDeDesconto">
+                            <td>Adicionar Cupom de disconto →</td>
+                        </tr>
+
+                        <tr id="subtotal">
+                            <td>Total</td>
+                            <td id="valorTotal">R$ 240</td>
+                        </tr>
+                        
+                    </tbody>
+
+                </table>
+                <button id="finalizarCompra">Finalizar Compra</button>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>
